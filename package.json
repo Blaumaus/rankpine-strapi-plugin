@@ -1,6 +1,6 @@
 {
   "name": "@rankpine/strapi-plugin-rankpine",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Securely connect Strapi 5 collection types to RankPine publishing.",
   "keywords": [
     "content",

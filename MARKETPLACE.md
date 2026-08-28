@@ -1,8 +1,8 @@
 # RankPine Strapi plugin release and Marketplace handoff
 
-Maintained source: `https://github.com/Blaumaus/rankpine-strapi-plugin`. Proposed npm package: `@rankpine/strapi-plugin-rankpine`. Proposed first version: `1.0.0`. The package targets Strapi `>=5.33.2 <6` only and is MIT licensed.
+Maintained source: `https://github.com/Blaumaus/rankpine-strapi-plugin`. Published npm package: `@rankpine/strapi-plugin-rankpine`. The package targets Strapi `>=5.33.2 <6` only and is MIT licensed.
 
-Nothing in this runbook authorizes npm publication, creation of a public repository, Strapi Market submission, login, legal acceptance, deployment, or a real customer install.
+The public repository and npm package are live. Nothing in this runbook authorizes Strapi Market submission, legal acceptance, deployment, or a real customer install.
 
 ## Current go/no-go
 
@@ -174,20 +174,21 @@ bun run --filter @rankpine/strapi-plugin-rankpine verify
 - Plugin SDK `verify`: passed; `package.json` and exported files verified.
 - Plugin package validation: passed.
 - Plugin unit/security tests: passed, 9/9.
-- Standalone `npm pack --dry-run`: passed; the package is approximately 49.1 kB, 130.2 kB unpacked, with SHA-1 `4303b769ee5619af20e3223acaebdb6144d061af` and 15 files, including the Marketplace PNG.
+- Standalone `npm pack --dry-run` for `1.0.1`: passed; the package is approximately 49.1 kB, 130.2 kB unpacked, with SHA-1 `cd76228acc1ea5d8b0453fda7a1236e0753ae697` and 15 files, including the Marketplace PNG.
 - `packages/jobs/src/publish.test.ts`: passed, 4/4, including Strapi duplicate prevention after migration.
 - Direct shipped runtime dependency audit (`undici@8.10.0`): 0 vulnerabilities.
 - Standalone plugin install with its required Strapi peer/dev tree: 18 advisories (4 low, 13 moderate, 1 high). The high advisory is `GHSA-866g-f22w-33x8` through Strapi 5.52.2's `@strapi/content-type-builder` AI SDK tree. It is not introduced by RankPine's direct runtime dependency, but it remains a Marketplace/release gate until Strapi ships a fixed dependency tree or the reviewer explicitly accepts the upstream exposure. Do not run the suggested forced audit fix because it would downgrade the peer installation to Strapi 4, which this plugin intentionally does not support.
 - Whole-workspace `bun audit --audit-level=high`: failed with 6 high advisories across RankPine and Strapi dev/peer dependency paths. Do not represent the whole repository as audit-clean.
-- `npm view @rankpine/strapi-plugin-rankpine`: returned `E404` on August 28, 2026, confirming that the package has not been published under that name.
+- npm `1.0.0` bootstrap publication: succeeded; anonymous registry lookup returned SHA-1 `4954f31cf4478e5f632509ab35fdb61eb4eb2974` and SHA-512 integrity `sha512-yHW2+gk/W2RFcRsLL2K5czpa5RG9TO57pAN5yPWlsr71+ugoaFFBoTdvvlF/cmKMan2EjTuDD3naK02OzH0S9g==`.
+- GitHub Actions trusted publisher: configured for `Blaumaus/rankpine-strapi-plugin`, workflow `release.yml`, with publish permission and no repository secret.
 - Targeted `oxfmt --check` and `git diff --check`: passed.
 
 ## Release checklist
 
 ### Package and code
 
-- [ ] Confirm the public repository URL and issue tracker.
-- [ ] Confirm package ownership and npm organization access.
+- [x] Confirm the public repository URL and issue tracker.
+- [x] Confirm package ownership and npm organization access.
 - [ ] Recheck the latest stable Strapi 5 range and minimum patched version.
 - [ ] Install/link into a disposable Strapi 5 project with Blocks, Rich Text, media, relation, component, dynamic-zone, i18n, and Draft & Publish fixtures.
 - [ ] Exercise pairing expiry, simultaneous replay, rotation, both-side disconnect, schema drift, and invalid signature handling.
@@ -197,7 +198,7 @@ bun run --filter @rankpine/strapi-plugin-rankpine verify
 - [ ] Re-run dependency audit and resolve or obtain documented upstream disposition for known high/critical vulnerabilities.
 - [x] Run Plugin SDK `build` and `verify`.
 - [x] Inspect `npm pack --dry-run` and create the local tarball with the PNG included.
-- [ ] Review README, LICENSE, SECURITY, changelog, compatibility, support policy, and permissions disclosure.
+- [x] Review README, LICENSE, SECURITY, changelog, compatibility, support policy, and permissions disclosure.
 
 ### Visual and product QA
 
@@ -209,10 +210,10 @@ bun run --filter @rankpine/strapi-plugin-rankpine verify
 
 ### External release boundary
 
-- [ ] Obtain explicit approval to create/push the public repository if needed.
-- [ ] Obtain explicit approval to publish the npm package.
-- [ ] Log in to npm and complete 2FA only after approval.
-- [ ] Publish with provenance; record version, package URL, integrity, and tarball contents.
+- [x] Obtain explicit approval to create/push the public repository if needed.
+- [x] Obtain explicit approval to publish the npm package.
+- [x] Log in to npm and complete 2FA only after approval.
+- [x] Publish the bootstrap package and record the package URL, integrity, and tarball contents; future releases use trusted-publisher provenance.
 - [ ] Install the public tarball into a clean Strapi 5 fixture and repeat the critical smoke tests.
 - [ ] Obtain written Strapi confirmation that a paid-SaaS connector is eligible, or document the independently free plugin-assisted feature.
 - [ ] Recheck and personally accept current Strapi Market terms/guidelines.

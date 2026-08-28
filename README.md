@@ -11,15 +11,13 @@ Securely connect one Strapi 5 collection type to [RankPine](https://rankpine.com
 
 ## Install
 
-The package is prepared but has not been published to npm. After its first approved npm release:
-
 ```bash
 npm install @rankpine/strapi-plugin-rankpine
 ```
 
 Restart Strapi and rebuild the Strapi admin panel as required by your deployment workflow. RankPine does not publish or deploy your Strapi project.
 
-For local package validation before the npm release, link the workspace package with the Strapi Plugin SDK/yalc workflow described in the official Strapi 5 documentation.
+For local package development, link the repository with the Strapi Plugin SDK/yalc workflow described in the official Strapi 5 documentation.
 
 ## Configure
 
@@ -73,7 +71,7 @@ Support covers the current Strapi 5 major and the latest stable RankPine plugin 
 
 ## Marketplace status
 
-This package is technically prepared for npm and Strapi Marketplace review, but no npm or Marketplace publication has occurred. Current Marketplace rules prohibit plugin features gated by an offsite paywall. RankPine will not submit this connector unless Strapi confirms eligibility or the plugin-assisted feature is made independently free under those rules.
+The package is published on npm. It has not been submitted to Strapi Marketplace because current rules prohibit plugin features gated by an offsite paywall. RankPine will not submit this connector unless Strapi confirms eligibility or the plugin-assisted feature is made independently free under those rules.
 
 ## License
 
