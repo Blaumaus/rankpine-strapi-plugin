@@ -181,6 +181,7 @@ bun run --filter @rankpine/strapi-plugin-rankpine verify
 - Whole-workspace `bun audit --audit-level=high`: failed with 6 high advisories across RankPine and Strapi dev/peer dependency paths. Do not represent the whole repository as audit-clean.
 - npm `1.0.0` bootstrap publication: succeeded; anonymous registry lookup returned SHA-1 `4954f31cf4478e5f632509ab35fdb61eb4eb2974` and SHA-512 integrity `sha512-yHW2+gk/W2RFcRsLL2K5czpa5RG9TO57pAN5yPWlsr71+ugoaFFBoTdvvlF/cmKMan2EjTuDD3naK02OzH0S9g==`.
 - GitHub Actions trusted publisher: configured for `Blaumaus/rankpine-strapi-plugin`, workflow `release.yml`, with publish permission and no repository secret.
+- npm `1.0.1` trusted publication: succeeded with SHA-1 `cd76228acc1ea5d8b0453fda7a1236e0753ae697`, SHA-512 integrity `sha512-yEmknNYwK38P0iLJVC91TcsOMJqhUp5xWW2I1Z7/dL/ABbCT4MSjenZJd80YdWSTqjYqNKT8LJYHnh/sItupiQ==`, and an npm-hosted SLSA provenance attestation.
 - Targeted `oxfmt --check` and `git diff --check`: passed.
 
 ## Release checklist
@@ -213,7 +214,7 @@ bun run --filter @rankpine/strapi-plugin-rankpine verify
 - [x] Obtain explicit approval to create/push the public repository if needed.
 - [x] Obtain explicit approval to publish the npm package.
 - [x] Log in to npm and complete 2FA only after approval.
-- [x] Publish the bootstrap package and record the package URL, integrity, and tarball contents; future releases use trusted-publisher provenance.
+- [x] Publish the bootstrap package, then verify the GitHub trusted-publisher path with a provenance-attested `1.0.1` release.
 - [ ] Install the public tarball into a clean Strapi 5 fixture and repeat the critical smoke tests.
 - [ ] Obtain written Strapi confirmation that a paid-SaaS connector is eligible, or document the independently free plugin-assisted feature.
 - [ ] Recheck and personally accept current Strapi Market terms/guidelines.
