@@ -1,0 +1,42 @@
+name: Bug report
+description: Report a reproducible RankPine plugin problem
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: Do not include API tokens, pairing codes, signing keys, article content, or customer diagnostics. Report vulnerabilities privately using SECURITY.md.
+  - type: input
+    id: plugin-version
+    attributes:
+      label: Plugin version
+      placeholder: 1.0.0
+    validations:
+      required: true
+  - type: input
+    id: strapi-version
+    attributes:
+      label: Strapi version
+      placeholder: 5.52.2
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: Include safe reproduction steps, expected behavior, and actual behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: fields
+    attributes:
+      label: Relevant content-type field shapes
+      description: List field names and types only. Remove content and identifiers.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Safety checks
+      options:
+        - label: I removed credentials, signing material, article content, and customer-identifying data.
+          required: true

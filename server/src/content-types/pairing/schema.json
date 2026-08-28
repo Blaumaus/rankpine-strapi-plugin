@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "rankpine_pairings",
+  "info": {
+    "singularName": "pairing",
+    "pluralName": "pairings",
+    "displayName": "RankPine pairing"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {
+    "content-manager": { "visible": false },
+    "content-type-builder": { "visible": false }
+  },
+  "attributes": {
+    "tokenHash": { "type": "string", "required": true, "unique": true, "private": true },
+    "contentTypeUid": { "type": "string", "required": true },
+    "expiresAt": { "type": "datetime", "required": true },
+    "consumedAt": { "type": "datetime" }
+  }
+}

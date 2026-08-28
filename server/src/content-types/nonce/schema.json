@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "rankpine_nonces",
+  "info": {
+    "singularName": "nonce",
+    "pluralName": "nonces",
+    "displayName": "RankPine nonce"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {
+    "content-manager": { "visible": false },
+    "content-type-builder": { "visible": false }
+  },
+  "attributes": {
+    "nonceHash": { "type": "string", "required": true, "unique": true, "private": true },
+    "expiresAt": { "type": "datetime", "required": true }
+  }
+}

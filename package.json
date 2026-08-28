@@ -1,0 +1,90 @@
+{
+  "name": "@rankpine/strapi-plugin-rankpine",
+  "version": "1.0.0",
+  "description": "Securely connect Strapi 5 collection types to RankPine publishing.",
+  "keywords": [
+    "content",
+    "plugin",
+    "publishing",
+    "rankpine",
+    "seo",
+    "strapi"
+  ],
+  "homepage": "https://rankpine.com/docs/integrations/strapi",
+  "bugs": {
+    "url": "https://github.com/Blaumaus/rankpine-strapi-plugin/issues"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "RankPine",
+    "email": "support@rankpine.com",
+    "url": "https://rankpine.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Blaumaus/rankpine-strapi-plugin.git"
+  },
+  "files": [
+    "dist",
+    "assets",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md",
+    "SECURITY.md"
+  ],
+  "type": "module",
+  "exports": {
+    "./package.json": "./package.json",
+    "./strapi-admin": {
+      "source": "./admin/src/index.tsx",
+      "import": "./dist/admin/index.mjs",
+      "require": "./dist/admin/index.js",
+      "default": "./dist/admin/index.js"
+    },
+    "./strapi-server": {
+      "source": "./server/src/index.js",
+      "import": "./dist/server/index.mjs",
+      "require": "./dist/server/index.js",
+      "default": "./dist/server/index.js"
+    }
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "scripts": {
+    "build": "strapi-plugin build",
+    "watch": "strapi-plugin watch",
+    "watch:link": "strapi-plugin watch:link",
+    "verify": "strapi-plugin verify",
+    "test": "node --test server/src/*.test.js",
+    "validate": "node scripts/validate-package.mjs"
+  },
+  "dependencies": {
+    "undici": "^8.5.0"
+  },
+  "devDependencies": {
+    "@strapi/sdk-plugin": "^6.0.0",
+    "typescript": "^5.9.3"
+  },
+  "peerDependencies": {
+    "@strapi/design-system": "^2.0.0",
+    "@strapi/icons": "^2.0.0",
+    "@strapi/strapi": ">=5.33.2 <6.0.0",
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0",
+    "react-intl": "^6.0.0 || ^7.0.0",
+    "react-router-dom": "^6.0.0 || ^7.0.0",
+    "styled-components": "^6.0.0"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=9.0.0"
+  },
+  "strapi": {
+    "name": "rankpine",
+    "displayName": "RankPine",
+    "description": "Securely connect a Strapi 5 collection type to RankPine.",
+    "kind": "plugin"
+  }
+}

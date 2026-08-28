@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">RankPine</title>
+  <rect width="64" height="64" rx="14" fill="#f4f7f2" />
+  <path d="M26 7Q20 15 18 20l4.5-2Q16 28 14 33l5.5-2Q11.5 41 10 46h12l.8 7.5H29l1-7.5h12q-2-5-9-15l5.5 2Q37 24 30 18l4.5 2Q33 12 26 7Z" fill="none" stroke="#166534" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  <ellipse cx="22" cy="30" rx="1.15" ry="1.7" fill="#166534" />
+  <ellipse cx="30" cy="30" rx="1.15" ry="1.7" fill="#166534" />
+  <path d="M21.5 34.4c2.4 2.3 6.4 2.1 8.8-.6" fill="none" stroke="#166534" stroke-width="1.5" stroke-linecap="round" />
+</svg>
